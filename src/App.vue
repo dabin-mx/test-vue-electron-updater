@@ -2,6 +2,11 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="This is the version 0.2.3 of the app. In the future, there may be a new update."/>
+    <p>
+      status: {{ local.getItem("status")}} <br>
+      version: {{ local.getItem("version")}} <br>
+      updating: {{ local.getItem("progress") }}
+    </p>
   </div>
 </template>
 
@@ -10,6 +15,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
+  data() {
+    return {
+      local: localStorage
+    }
+  },
   components: {
     HelloWorld
   }

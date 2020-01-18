@@ -43,6 +43,31 @@ function createWindow() {
   })
 }
 
+autoUpdater.on('checking-for-update', () => {
+  localStorage.setItem("status", "Checking for updates...");
+})
+
+autoUpdater.on('update-available', (info) => {
+  localStorage.setItem("status", "Update Available");
+  localStorage.setItem("version", info.version);
+})
+
+autoUpdater.on('update-not-available', (info) => {
+  localStorage.setItem("status", "Update not Available");
+})
+
+autoUpdater.on('download-progress', (event, text) => {
+  localStorage.setItem("progress", `${text}%`);
+})
+
+autoUpdater.on('update-downloaded', () => {
+  autoUpdater.quitAndInstall()
+})
+
+autoUpdater.on('error', (err) => {
+  localStorage.setItem('error' + err)
+})
+
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
