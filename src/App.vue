@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="This is the version 0.2.3 of the app. In the future, there may be a new update."/>
+    <HelloWorld msg="This is the version 0.2.4 of the app. In the future, there may be a new update."/>
     <p>
       status: {{ local.getItem("status")}} <br>
       version: {{ local.getItem("version")}} <br>
