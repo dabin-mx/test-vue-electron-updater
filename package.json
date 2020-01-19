@@ -1,13 +1,15 @@
 {
   "name": "electron-auto-update-example",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "electron:build": "vue-cli-service electron:build",
+    "electron:build-win": "vue-cli-service electron:build --windows",
     "electron:serve": "vue-cli-service electron:serve",
+    "publish-win": "vue-cli-service electron:build --windows -p always",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
